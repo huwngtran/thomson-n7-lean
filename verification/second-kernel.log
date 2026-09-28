@@ -1,0 +1,41 @@
+Build completed successfully (6 jobs).
+    Finished `release` profile [optimized] target(s) in 0.07s
+ 7218186 387517967 <repo>/formal/lean/logs/second-kernel/thomson_n7.ndjson
+5a631ea62115973ddb3770e1d6bc6d6cb9595eeb0e910a82edc3e7fa65f61b61 <repo>/formal/lean/logs/second-kernel/thomson_n7.ndjson
+
+== nanoda on the real export (expect: axioms propext, Quot.sound, Classical.choice; "Checked N declarations with no errors")
+theorem ThomsonN7.thomson_seven :
+  forall (x : Fin (OfNat.ofNat 7) → ThomsonN7.R3),
+  Membership.mem (ThomsonN7.SphereConfig (OfNat.ofNat 7)) x → LE.le (ThomsonN7.coulombEnergy ThomsonN7.pentBipyramid)
+    (ThomsonN7.coulombEnergy x) :=
+  _
+
+theorem ThomsonN7.thomson_seven_unique :
+  forall (x : Fin (OfNat.ofNat 7) → ThomsonN7.R3),
+  Membership.mem (ThomsonN7.SphereConfig (OfNat.ofNat 7)) x → Eq (ThomsonN7.coulombEnergy x)
+      (ThomsonN7.coulombEnergy ThomsonN7.pentBipyramid) →
+  Exists
+    (fun (g : LinearIsometryEquiv (RingHom.id Real) ThomsonN7.R3 ThomsonN7.R3) =>
+    Exists
+      (fun (σ : Equiv.Perm (Fin (OfNat.ofNat 7))) =>
+      forall (i : Fin (OfNat.ofNat 7)),
+      Eq (x i) (DFunLike.coe g (ThomsonN7.pentBipyramid (DFunLike.coe σ i))))) :=
+  _
+
+axiom propext {a b : Prop} : Iff a b → Eq a b
+
+axiom Quot.sound.{u} {α : Sort u} {r : α → α → Prop} {a b : α} : r a b → Eq (Quot.mk r a) (Quot.mk r b)
+
+axiom Classical.choice.{u} {α : Sort u} : Nonempty α → α
+
+Checked 47854 declarations with no errors
+
+== negative control: one certificate integer of Case1Data.cf changed by +1 (first entry of F0_d, 1809389050761 -> 1809389050762)
+negative control ok: nanoda rejected the tampered export
+thread 'main' (7366349) panicked at src/tc.rs:955:71:
+assertion failed: self.def_eq(u, v)
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+
+SECOND KERNEL: OK (real export accepted, tampered export rejected)
+bash scripts/second-kernel.sh  213.11s user 14.48s system 97% cpu 3:53.17 total
+exit=0

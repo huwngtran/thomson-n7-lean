@@ -1,0 +1,12 @@
+date: 2026-09-28
+os: macOS 26.6 (arm64)
+machine: Apple M5 Pro, 48 GiB
+elan: elan 4.2.4 ( )
+lean: Lean (version 4.34.1, arm64-apple-darwin24.6.0, commit 5045d0056413266e57c625dcd7c365b10e377c52, Release)
+lake: Lake version 5.0.0-src+5045d00 (Lean version 4.34.1)
+python3: Python 3.14.7
+cargo: cargo 1.98.1 (797e8a9bc 2026-08-05) (Homebrew)
+comparator: fd5d5bcf14177b187f66d4502071268d877887c3
+lean4export: 076e8e57707e813375e8f9da8bf989799ace9680
+nanoda_lib: 3a2407216ee84a75f9e1aead6803d0578be06ae7
+lean4export local change (made by formal/lean/scripts/tools.sh):  M lean-toolchain -> leanprover/lean4:v4.34.1

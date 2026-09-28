@@ -1,0 +1,19 @@
+name = "ThomsonN7"
+defaultTargets = ["ThomsonN7"]
+
+# Mathlib is the only dependency. Its own manifest fixes the versions of aesop, batteries, Qq, ...;
+# lake-manifest.json records the resolved revisions.
+[[require]]
+name = "mathlib"
+scope = "leanprover-community"
+git = "https://github.com/leanprover-community/mathlib4.git"
+rev = "d13f23b723b8a846827a245b89c10fc7d3f11612"
+
+# The proof: ThomsonN7.lean imports ThomsonN7/Solution.lean.
+[[lean_lib]]
+name = "ThomsonN7"
+
+# The trusted statement file (three `sorry`s by design), compared with the proof by Comparator.
+[[lean_lib]]
+name = "ComparatorChallenges"
+roots = ["ComparatorChallenges.ThomsonN7"]

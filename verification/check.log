@@ -1,0 +1,107 @@
+
+== 1. file identity (must match SHA256SUMS.txt)
+both hashes ok
+
+== 2. statement preamble: ThomsonN7/Solution.lean lines 1-310 are byte-identical to ComparatorChallenges/ThomsonN7.lean lines 1-310
+identical
+
+== 3. token scan of ThomsonN7/Solution.lean (expect no output between the markers)
+-- begin
+-- end
+decide +kernel occurrences:       71 (70 tactic uses + 1 docstring mention; each closes a Lean-proved soundness lemma's boolean check)
+
+== 3b. claims.tsv: every line number cited by the paper still declares its name
+claims.tsv: 76 rows checked against 2 Lean files
+CLAIMS CHECK: OK
+
+== 4. toolchain and Mathlib (pinned by lean-toolchain, lakefile.toml, lake-manifest.json)
+leanprover/lean4:v4.34.1
+info: mathlib: cloning https://github.com/leanprover-community/mathlib4.git
+info: mathlib: checking out revision 'd13f23b723b8a846827a245b89c10fc7d3f11612'
+info: plausible: cloning https://github.com/leanprover-community/plausible
+info: plausible: checking out revision '118aa17ee84656b8bd727fef7c458ee8c833385c'
+info: LeanSearchClient: cloning https://github.com/leanprover-community/LeanSearchClient
+info: LeanSearchClient: checking out revision 'ddf04cf3949fa556442341e87d47f9f6e6074707'
+info: importGraph: cloning https://github.com/leanprover-community/import-graph
+info: importGraph: checking out revision 'e928b72544873815af278d38681b31c0293588e3'
+info: proofwidgets: cloning https://github.com/leanprover-community/ProofWidgets4
+info: proofwidgets: checking out revision '106ff4fafc74ef4ac99d81dbf3ab399118f497a5'
+info: aesop: cloning https://github.com/leanprover-community/aesop
+info: aesop: checking out revision '355695d523e41d0554926416cba2a2b3544fbbc9'
+info: Qq: cloning https://github.com/leanprover-community/quote4
+info: Qq: checking out revision '6a489d9af5d0c47e5b259e2e8bcdfc1811b5a259'
+info: batteries: cloning https://github.com/leanprover-community/batteries
+info: batteries: checking out revision 'f2effa3d803fda822b1f97b806c47cf2adfbcbc2'
+info: Cli: cloning https://github.com/leanprover/lean4-cli
+info: Cli: checking out revision 'e92c9f15fdfacc8536f31cfb3b7ad26c3c8cd204'
+Current branch: HEAD
+Using cache from origin: (some leanprover-community/mathlib4)
+Decompressing 8907 already-cached file(s) (1 already decompressed)
+No files to download
+Decompressed 8907 already-cached file(s)
+Completed successfully in 10839 ms!
+
+== 5. lake build (the challenge has 3 expected 'declaration uses sorry' warnings; the solution must have none)
+warning: ThomsonN7/Solution.lean:8710:4: `push_neg` has been deprecated. Prefer using `push Not` instead.
+If you'd rather continue using `push_neg` in your project, you can implement it as follows:
+```
+open Lean.Parser.Tactic in
+macro "push_neg" cfg:optConfig loc:(location)? : tactic =>
+  `(tactic| push $cfg:optConfig Not $[$loc]?)
+```
+warning: ThomsonN7/Solution.lean:10897:8: `if_pos` has been deprecated: Use `ite_eq_left` instead
+warning: ThomsonN7/Solution.lean:10900:10: `if_pos` has been deprecated: Use `ite_eq_left` instead
+warning: ThomsonN7/Solution.lean:10900:21: `if_pos` has been deprecated: Use `ite_eq_left` instead
+warning: ThomsonN7/Solution.lean:10901:10: `if_neg` has been deprecated: Use `ite_eq_right` instead
+warning: ThomsonN7/Solution.lean:10901:21: `if_neg` has been deprecated: Use `ite_eq_right` instead
+warning: ThomsonN7/Solution.lean:10941:10: `if_pos` has been deprecated: Use `ite_eq_left` instead
+warning: ThomsonN7/Solution.lean:10941:20: `if_pos` has been deprecated: Use `ite_eq_left` instead
+warning: ThomsonN7/Solution.lean:10904:27: Variable name `hn` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hn
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+✔ [8927/8928] Built ThomsonN7 (6.3s)
+Build completed successfully (8928 jobs).
+real 343.65
+user 554.34
+sys 93.72
+sorry warnings in ComparatorChallenges/ThomsonN7.lean: 3 (expect 3)
+sorry warnings in ThomsonN7/Solution.lean:  0 (expect 0)
+
+== 6. axioms of the two theorems (expect propext, Classical.choice, Quot.sound only)
+'ThomsonN7.thomson_seven' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ThomsonN7.thomson_seven_unique' depends on axioms: [propext, Classical.choice, Quot.sound]
+ThomsonN7.thomson_seven : ∀ x ∈ ThomsonN7.SphereConfig 7,
+  ThomsonN7.coulombEnergy ThomsonN7.pentBipyramid ≤ ThomsonN7.coulombEnergy x
+ThomsonN7.thomson_seven_unique : ∀ x ∈ ThomsonN7.SphereConfig 7,
+  ThomsonN7.coulombEnergy x = ThomsonN7.coulombEnergy ThomsonN7.pentBipyramid →
+    ∃ g σ, ∀ (i : Fin 7), x i = g (ThomsonN7.pentBipyramid (σ i))
+
+== 7. statement fidelity: every challenge constant has the same type (and value, for definitions) in the solution
+Challenge constants: 57   Solution rows: 56
+compared: 56 (6 definitions with values)   skipped (not attempted): ['ThomsonN7.thomson_nine']
+sha256 of the compared Challenge text: 5c20669e3aa1b37bf692f0f00b4bbed8842e0c8e8b2d6a0573ac6a542b8f175d
+missing in Solution: []
+kind/universe/type mismatches: []
+definition value mismatches: []
+axiom/opaque/quot declared in Solution: []
+STATEMENT COMPARISON: OK
+
+== DONE: all checks above passed (a failing step stops the script)
+316c316
+<     ∀ x ∈ SphereConfig 7, coulombEnergy pentBipyramid ≤ coulombEnergy x := by
+---
+>     ∀ x ∈ SphereConfig 7, coulombEnergy x ≤ coulombEnergy pentBipyramid := by
+Challenge constants: 57   Solution rows: 57
+compared: 56 (6 definitions with values)   skipped (not attempted): ['ThomsonN7.thomson_nine']
+sha256 of the compared Challenge text: 5c20669e3aa1b37bf692f0f00b4bbed8842e0c8e8b2d6a0573ac6a542b8f175d
+missing in Solution: []
+kind/universe/type mismatches: ['ThomsonN7.thomson_seven']
+definition value mismatches: []
+axiom/opaque/quot declared in Solution: []
+STATEMENT COMPARISON: FAILED
+NEGATIVE CONTROL OK: the tampered statement was detected (and only that one)
+bash formal/check.sh  620.10s user 229.68s system 141% cpu 9:59.26 total
+exit=0

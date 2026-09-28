@@ -1,0 +1,25 @@
+theorem ThomsonN7.thomson_seven :
+  forall (x : Fin (OfNat.ofNat 7) → ThomsonN7.R3),
+  Membership.mem (ThomsonN7.SphereConfig (OfNat.ofNat 7)) x → LE.le (ThomsonN7.coulombEnergy ThomsonN7.pentBipyramid)
+    (ThomsonN7.coulombEnergy x) :=
+  _
+
+theorem ThomsonN7.thomson_seven_unique :
+  forall (x : Fin (OfNat.ofNat 7) → ThomsonN7.R3),
+  Membership.mem (ThomsonN7.SphereConfig (OfNat.ofNat 7)) x → Eq (ThomsonN7.coulombEnergy x)
+      (ThomsonN7.coulombEnergy ThomsonN7.pentBipyramid) →
+  Exists
+    (fun (g : LinearIsometryEquiv (RingHom.id Real) ThomsonN7.R3 ThomsonN7.R3) =>
+    Exists
+      (fun (σ : Equiv.Perm (Fin (OfNat.ofNat 7))) =>
+      forall (i : Fin (OfNat.ofNat 7)),
+      Eq (x i) (DFunLike.coe g (ThomsonN7.pentBipyramid (DFunLike.coe σ i))))) :=
+  _
+
+axiom propext {a b : Prop} : Iff a b → Eq a b
+
+axiom Quot.sound.{u} {α : Sort u} {r : α → α → Prop} {a b : α} : r a b → Eq (Quot.mk r a) (Quot.mk r b)
+
+axiom Classical.choice.{u} {α : Sort u} : Nonempty α → α
+
+Checked 47854 declarations with no errors

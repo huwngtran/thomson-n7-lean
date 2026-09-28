@@ -1,0 +1,81 @@
+# claims.tsv - index from the paper to the Lean files.
+# One row per Lean declaration that the paper (paper/PAPER.md at the repository root) cites by line. scripts/check_claims.py fails if a line no longer declares its name.
+# kind: decl = declaration on that line; region = a namespace whose first line is given; statement = a sorry-ed target in the challenge file;
+#       def = a definition of the audit surface; main theorem = the two proved theorems.
+name	file	line	kind	paper_section	topic
+R3	ComparatorChallenges/ThomsonN7.lean	21	def	2	definitions of the audit surface
+SphereConfig	ComparatorChallenges/ThomsonN7.lean	25	def	2	definitions of the audit surface
+coulombEnergy	ComparatorChallenges/ThomsonN7.lean	29	def	2	definitions of the audit surface
+cyl	ComparatorChallenges/ThomsonN7.lean	33	def	2	definitions of the audit surface
+pentBipyramid	ComparatorChallenges/ThomsonN7.lean	37	def	2	definitions of the audit surface
+phi	ThomsonN7/Solution.lean	318	decl	3	varphi, c_1, c_2
+c1	ThomsonN7/Solution.lean	414	decl	3	varphi, c_1, c_2
+c2	ThomsonN7/Solution.lean	417	decl	3	varphi, c_1, c_2
+Q3	ThomsonN7/Solution.lean	527	decl	4	kernels
+Y3	ThomsonN7/Solution.lean	534	decl	4	kernels
+S3	ThomsonN7/Solution.lean	538	decl	4	kernels
+matDot	ThomsonN7/Solution.lean	543	decl	4	kernels
+Q3_eq_re	ThomsonN7/Solution.lean	557	decl	4	addition theorem
+GramOK	ThomsonN7/Solution.lean	1048	decl	4	Gram triples
+dsum	ThomsonN7/Solution.lean	737	decl	5.1	dsum, Rs
+Rs	ThomsonN7/Solution.lean	934	decl	5.1	dsum, Rs
+Rk	ThomsonN7/Solution.lean	1073	decl	5.1	dsum, Rs
+three_point_identity	ThomsonN7/Solution.lean	1097	decl	5.1	three-point identity
+three_point_bound	ThomsonN7/Solution.lean	1118	decl	5.1	three-point bound
+three_point_bound_cut	ThomsonN7/Solution.lean	5942	decl	5.1	three-point bound
+margin_of_threePoint_cut	ThomsonN7/Solution.lean	5991	decl	5.1	three-point bound
+Ex.ev_eq_zero_of_kev	ThomsonN7/Solution.lean	1901	decl	8	Kronecker soundness
+qform_dd_nonneg	ThomsonN7/Solution.lean	2096	decl	8	PSD blocks
+Blk	ThomsonN7/Solution.lean	2160	decl	8	PSD blocks
+qf_nonneg	ThomsonN7/Solution.lean	2207	decl	8	PSD blocks
+fmat_psd	ThomsonN7/Solution.lean	2397	decl	8	PSD blocks
+Cert3	ThomsonN7/Solution.lean	2640	decl	5.2	Case-1 certificate
+Cert3.idE	ThomsonN7/Solution.lean	2670	decl	5.2	Case-1 certificate
+chk_sound	ThomsonN7/Solution.lean	2682	decl	5.2	Case-1 certificate
+hpt_gramCut	ThomsonN7/Solution.lean	2751	decl	5.2	Case-1 certificate
+Cert3.sound	ThomsonN7/Solution.lean	2804	decl	5.2	Case-1 certificate
+cutCert	ThomsonN7/Solution.lean	9285	decl	5.3	1-D certificate
+Case1Data	ThomsonN7/Solution.lean	9588	region	5.2	Case-1 data
+Case1.seven_of_case2	ThomsonN7/Solution.lean	10563	decl	5.4	Case 1 to theorems
+typed_bound_comb2	ThomsonN7/Solution.lean	10904	decl	6	typed bound
+W7	ThomsonN7/Solution.lean	11016	decl	6	typed bound
+hc7	ThomsonN7/Solution.lean	11050	decl	6	typed bound
+lamA	ThomsonN7/Solution.lean	11056	decl	6	typed bound
+lamB	ThomsonN7/Solution.lean	11060	decl	6	typed bound
+lamG	ThomsonN7/Solution.lean	11065	decl	6	typed bound
+hpt7	ThomsonN7/Solution.lean	11098	decl	6	typed bound
+chk4	ThomsonN7/Solution.lean	11547	decl	7.2	ring rigidity
+comb5_dec	ThomsonN7/Solution.lean	11755	decl	7.2	ring rigidity
+ring_pentagon	ThomsonN7/Solution.lean	11887	decl	7.2	ring rigidity
+ring_rigid	ThomsonN7/Solution.lean	11950	decl	7.2	ring rigidity
+Concl	ThomsonN7/Solution.lean	12025	decl	3	Case-2 reduction
+exists_minpair_perm	ThomsonN7/Solution.lean	12058	decl	3	Case-2 reduction
+RootedClaim	ThomsonN7/Solution.lean	12072	decl	3	Case-2 reduction
+case2_of_rooted	ThomsonN7/Solution.lean	12077	decl	3	Case-2 reduction
+exists_cell	ThomsonN7/Solution.lean	12097	decl	3	Case-2 reduction
+slab_of_typed	ThomsonN7/Solution.lean	12196	decl	7	cap and slabs
+seven_of_cap_slabs	ThomsonN7/Solution.lean	12282	decl	7	cap and slabs
+TubeRigid	ThomsonN7/Solution.lean	12329	decl	7	cap and slabs
+cap_of_typed_tube	ThomsonN7/Solution.lean	12394	decl	7	cap and slabs
+CapSpec	ThomsonN7/Solution.lean	12717	decl	7	cap and slabs
+capSpec_sound	ThomsonN7/Solution.lean	12729	decl	7	cap and slabs
+SlabSpec	ThomsonN7/Solution.lean	12739	decl	7	cap and slabs
+slabSpec_sound	ThomsonN7/Solution.lean	12750	decl	7	cap and slabs
+seven_of_specs	ThomsonN7/Solution.lean	12804	decl	7	cap and slabs
+exists_gauge	ThomsonN7/Solution.lean	4838	decl	7.2	local analysis
+localGram_of_localMinAt	ThomsonN7/Solution.lean	5814	decl	7.2	local analysis
+energy_ge_cubic	ThomsonN7/Solution.lean	6703	decl	7.2	local analysis
+local_ineq	ThomsonN7/Solution.lean	9020	decl	7.2	local analysis
+pent_local_min	ThomsonN7/Solution.lean	9059	decl	7.2	local analysis
+pent_local_min_sup	ThomsonN7/Solution.lean	9098	decl	7.2	local analysis
+TCert	ThomsonN7/Solution.lean	14839	decl	6.5	typed certificates
+tc_cap	ThomsonN7/Solution.lean	16055	decl	6.5	typed certificates
+Par	ThomsonN7/Solution.lean	15211	decl	6.5	typed certificates
+Final.a	ThomsonN7/Solution.lean	17850	decl	3	breakpoints
+Final.K	ThomsonN7/Solution.lean	17859	decl	3	breakpoints
+hslab	ThomsonN7/Solution.lean	17863	decl	3	breakpoints
+hcap	ThomsonN7/Solution.lean	17873	decl	3	breakpoints
+thomson_seven	ThomsonN7/Solution.lean	17884	main theorem	3	main theorems
+thomson_seven_unique	ThomsonN7/Solution.lean	17890	main theorem	3	main theorems
+thomson_seven	ComparatorChallenges/ThomsonN7.lean	315	statement	2	statement to be proved
+thomson_seven_unique	ComparatorChallenges/ThomsonN7.lean	321	statement	2	statement to be proved

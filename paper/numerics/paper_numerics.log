@@ -1,0 +1,13 @@
+E(P) direct  = 14.4529774142213429350444915306
+E(P) closed  = 14.4529774142213429350444915306
+difference   = 3.6734e-40
+Gram values (value: number of the 21 pairs): {'-1.0': 1, '-0.809016994375': 5, '0.0': 10, '0.309016994375': 5}
+(sqrt5-1)/4 = 0.309016994375   -(1+sqrt5)/4 = -0.809016994375
+radial components <grad_i E, x_i> = the Lagrange multiplier of each vertex constraint (indices 0-4 ring, 5-6 poles; they need not be equal across orbits): [-2.083489 -2.083489 -2.083489 -2.083489 -2.083489 -2.017767 -2.017767]
+max tangential gradient norm at P (criticality): 8.38e-17
+Hessian eigenvalues (analytic): [-0.        0.        0.        0.009198  0.009198  0.963179  0.963179
+  2.386485  2.386485  2.437042  2.595989  2.595989  3.904632  3.904632]
+Hessian eigenvalues (finite diff): [-0.      -0.       0.       0.0092   0.0092   0.96318  0.96318  2.38649
+  2.38649  2.43704  2.59599  2.59599  3.90463  3.90463]
+zero modes (|eig| < 1e-6): 3 ; smallest positive eigenvalue: 0.009198
+E(P) + 3/10000 = 14.4532774142
